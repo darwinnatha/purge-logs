@@ -1,0 +1,30 @@
+{
+    "name": "darwinnatha/pure-logs",
+    "description": "A simple package to purge logs from a period",
+    "type": "laravel-package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Darwinnatha\\PureLogs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Darwin Nathan",
+            "email": "fotsodarwin@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "*",
+        "illuminate/console": "^11.26",
+        "laravel/framework": "^11.26"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Darwinnatha\\PurgeLogs\\PurgeLogsServiceProvider"
+            ]
+        }
+    }
+}
