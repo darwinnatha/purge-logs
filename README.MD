@@ -40,8 +40,10 @@ php artisan logs:purge 30
 ```
 
 ## Configuration
+Publiez le fichier de configuration `config/purge-logs.php` dans votre application.
 
-Vous pouvez configurer le nombre de jours à conserver en modifiant le fichier `config/purge-logs.php`.      
+Vous pouvez configurer le nombre de jours à conserver en modifiant le fichier `config/purge-logs.php`.
+
 Par défaut, le nombre de jours est de 30 jours.
 
 ```php
