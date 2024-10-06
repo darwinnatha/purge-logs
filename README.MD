@@ -1,10 +1,12 @@
 # Purge Logs
 
-Ce package permet de purger les fichiers de log plus anciens que le nombre de jours spécifié.
+<!-- Ce package permet de purger les fichiers de log plus anciens que le nombre de jours spécifié. -->
+This package enable to purge logs that have been write before the specified date 
 
 ## Installation
 
-Pour installer ce package, il suffit d'ajouter le package à votre projet via Composer.
+<!-- Pour installer ce package, il suffit d'ajouter le package à votre projet via Composer. -->
+To install this package, you should 
 
 ```bash
 composer require darwinnatha/pure-logs
