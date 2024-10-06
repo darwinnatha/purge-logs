@@ -1,6 +1,6 @@
 <?php
 
-namespace Darwinnatha\PurgeLogs;
+namespace Darwinnatha\PurgeLogs\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;

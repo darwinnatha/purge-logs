@@ -2,6 +2,7 @@
 
 namespace Darwinnatha\PurgeLogs;
 
+use Darwinnatha\PurgeLogs\Commands\PurgeLogsCommand;
 use Illuminate\Support\ServiceProvider;
 
 class PurgeLogsServiceProvider extends ServiceProvider
