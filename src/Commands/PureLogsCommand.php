@@ -1,6 +1,6 @@
 <?php
 
-namespace Darwinnatha\PurgeLogs;
+namespace Darwinnatha\PurgeLogs\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
@@ -14,7 +14,8 @@ class PurgeLogsCommand extends Command
     {
         // Récupération du chemin des logs
         $logPath = storage_path('logs');
-        $keepDays = (int) $this->option('keep-days');
+        //Verification de keep-days
+        $keepDays = (int) $this->option('keep-days') ?: config('purge-logs.retention_period');
 
         // Vérification que le répertoire des logs existe
         if (!File::exists($logPath)) {
