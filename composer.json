@@ -2,6 +2,7 @@
     "name": "darwinnatha/purge-logs",
     "description": "A simple package to purge logs from a period",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Darwin Nathan",
