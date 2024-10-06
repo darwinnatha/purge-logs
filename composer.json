@@ -25,5 +25,7 @@
                 "Darwinnatha\\PurgeLogs\\PurgeLogsServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
