@@ -1,5 +1,5 @@
 {
-    "name": "darwinnatha/pure-logs",
+    "name": "darwinnatha/purge-logs",
     "description": "A simple package to purge logs from a period",
     "type": "laravel-package",
     "license": "MIT",
