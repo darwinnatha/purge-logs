@@ -1,7 +1,6 @@
 # Purge Logs
-<!-- In english -->
-<!-- Ce package permet de purger les fichiers de log plus anciens que le nombre de jours spécifié. -->
-This package enable to purge logs that have been write before the specified date 
+
+This package allows you to delete logs, keeping only those from a given period. 
 
 ## Installation
 
