@@ -17,15 +17,15 @@ class PurgeLogsCommand extends Command
         $keepDays = (int) $this->option('keep-days') ?: config('purge-logs.retention_period');
 
         if (!File::exists($logPath)) {
-            $this->error("Le répertoire des logs n'existe pas.");
-            return;
+            $this->error("The logs directory doesn't exists.");
+            return Command::FAILURE;
         }
 
         $logFiles = File::files($logPath);
         $now = now();
 
         foreach ($logFiles as $logFile) {
-            $this->info("Traitement du fichier : " . $logFile->getFilename());
+            $this->info("Working on file : " . $logFile->getFilename());
 
             $lines = file($logFile->getPathname(), FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
             $newContent = [];
@@ -38,7 +38,7 @@ class PurgeLogsCommand extends Command
 
                     if ($logDate->diffInDays($now) > $keepDays) {
                         $currentLogDate = $logDate;
-                        $this->info("Purge du log datant du : " . $logDate->toDateTimeString());
+                        $this->info("Purge the log of : " . $logDate->toDateTimeString());
                         continue;
                     }
 
@@ -51,9 +51,10 @@ class PurgeLogsCommand extends Command
             }
 
             File::put($logFile->getPathname(), implode(PHP_EOL, $newContent));
-            $this->info("Purge terminée pour : " . $logFile->getFilename());
+            $this->info("Purge terminated for : " . $logFile->getFilename());
         }
 
-        $this->info("Purge des logs terminée.");
+        $this->info("Logs purge terminated");
+        return Command::SUCCESS;
     }
 }
