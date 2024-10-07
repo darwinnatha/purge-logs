@@ -7,11 +7,7 @@ use Illuminate\Support\ServiceProvider;
 
 class PurgeLogsServiceProvider extends ServiceProvider
 {
-    public function register()
-    {
-        // Charge la configuration
-        $this->registerConfig();
-    }
+    public function register() {}
 
     public function boot()
     {
@@ -20,20 +16,19 @@ class PurgeLogsServiceProvider extends ServiceProvider
             $this->commands([
                 PurgeLogsCommand::class,
             ]);
+            $this->registerConfig();
         }
-
-        // Publie le fichier de configuration
-        // $this->publishes([
-        //     __DIR__ . '/../config/purge-logs.php' => config_path('purge-logs.php'),
-        // ], 'config');
     }
 
     protected function registerConfig()
     {
-        $config = __DIR__.'/../config/purge-logs.php';
+        if ($this->app->runningInConsole()) {
 
-        $this->publishes([$config => base_path('config/purge-logs.php')], 'config');
+            $config = __DIR__ . '/../config/purge-logs.php';
 
-        $this->mergeConfigFrom($config, 'purge-logs');
+            $this->publishes([$config => base_path('config/purge-logs.php')], ['purge-logs', 'purge-logs:config']);
+
+            $this->mergeConfigFrom($config, 'purge-logs');
+        }
     }
 }
