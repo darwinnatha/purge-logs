@@ -1,6 +1,6 @@
 {
     "name": "darwinnatha/purge-logs",
-    "description": "A simple package to purge logs from a period",
+    "description": "a simple package for deleting logs for a specific period of time",
     "type": "library",
     "license": "MIT",
     "authors": [

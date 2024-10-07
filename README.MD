@@ -1,52 +1,39 @@
 # Purge Logs
-
+<!-- In english -->
 <!-- Ce package permet de purger les fichiers de log plus anciens que le nombre de jours spécifié. -->
 This package enable to purge logs that have been write before the specified date 
 
 ## Installation
 
-<!-- Pour installer ce package, il suffit d'ajouter le package à votre projet via Composer. -->
-To install this package, you should 
+To install this package, you should add the package to your project via Composer.
 
 ```bash
 composer require darwinnatha/pure-logs
 ```
 
-## Utilisation
+## Usage
 
-Pour utiliser ce package, ajoutez le service provider à votre fichier `config/app.php`.
-
-```php
-'providers' => [
-    // ...
-    Darwinnatha\PurgeLogs\PurgeLogsServiceProvider::class,
-],
-```
-
-Puis, publiez le fichier de configuration.
+To use this package, publish the configuration file.
 
 ```bash
 php artisan vendor:publish --provider="Darwinnatha\PurgeLogs\PurgeLogsServiceProvider"
 ```
 
-desormais, vous pouvez purger les fichiers de log avec la commande `logs:purge`.
+Then, you can purge the logs by running the following command.
 
 ```bash
 php artisan logs:purge
 ```
 
-Ou bien, si vous souhaitez spécifier le nombre de jours à conserver, vous pouvez utiliser l'argument `days`.
+Alternatively, if you want to specify the number of days to retain, you can use the `days` argument.
 
 ```bash
 php artisan logs:purge 30
 ```
 
 ## Configuration
-Publiez le fichier de configuration `config/purge-logs.php` dans votre application.
+You can configure the number of days to retain by editing the `config/purge-logs.php` file.
 
-Vous pouvez configurer le nombre de jours à conserver en modifiant le fichier `config/purge-logs.php`.
-
-Par défaut, le nombre de jours est de 30 jours.
 
 ```php
 return [
