@@ -26,7 +26,7 @@ class PurgeLogsServiceProvider extends ServiceProvider
 
             $config = __DIR__ . '/../config/purge-logs.php';
 
-            $this->publishes([$config => base_path('config/purge-logs.php')], ['purge-logs', 'purge-logs:config']);
+            $this->publishes([$config => base_path('config/purge-logs.php')], 'purge-logs');
 
             $this->mergeConfigFrom($config, 'purge-logs');
         }
