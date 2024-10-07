@@ -10,7 +10,7 @@ class PurgeLogsServiceProvider extends ServiceProvider
     public function register()
     {
         // Charge la configuration
-        $this->mergeConfigFrom(__DIR__ . '/../config/purge-logs.php', 'purge-logs');
+        $this->registerConfig();
     }
 
     public function boot()
